@@ -15,11 +15,20 @@ public class Amalgam extends Instance implements Disruptive, Adhesive{
 		return 0;
 	}
 	
-	public void disrupt(Adhesive target) {
-	}
-	
 	public int becomeDisrupted(){
 		return 0;
+	}
+
+	@Override
+	public int becomeDisrupted(int amtDisruption) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void disrupt(Adhesive target, int amtDisruption) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

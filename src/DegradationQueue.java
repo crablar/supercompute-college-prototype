@@ -1,4 +1,4 @@
-import java.utils.ArrayList;
+import java.util.ArrayList;
 
 /*
  * Class for Degradation Queue
@@ -8,14 +8,13 @@ import java.utils.ArrayList;
 
 public class DegradationQueue {
 
-	private ArrayList<Function> dq;
+	private static final ArrayList<Function> dq = new ArrayList<Function>();
 	
-	public DegradationQueue initializeDegradationQueue(){
-		dq = new ArrayList<Function>();
-	}
-	
-	public void degradeFront(){
+	//Degrade and return the front function
+	public Function degradeFront(){
+		Function degraded = dq.get(dq.size() - 1);
 		dq.remove(dq.size() - 1);
+		return degraded;
 	}
 	
 }

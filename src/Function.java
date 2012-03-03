@@ -1,4 +1,11 @@
+package src;
 
-public abstract class Function {
-
+public class Function {
+	
+	private String name;
+	
+	public Function emptyFunction(String name){
+		this.name = name;
+	}
+	
 }

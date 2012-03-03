@@ -37,6 +37,8 @@ public class Amalgam extends Instance implements Disruptive, Adhesive{
 		
 	}
 	
+	public void addExtension()
+	
 	
 	
 }

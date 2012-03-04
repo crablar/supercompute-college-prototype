@@ -1,4 +1,7 @@
+package functions;
 
+import abstract_types.*;
+import java.util.HashMap;
 
 public class FunctionList {
 	private HashMap<String, Function> functionList;

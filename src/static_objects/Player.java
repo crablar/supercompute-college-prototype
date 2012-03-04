@@ -1,5 +1,6 @@
-import java.util.HashMap;
+package static_objects;
 
+import java.util.HashMap;
 
 public class Player {
 	

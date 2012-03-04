@@ -1,5 +1,7 @@
-import java.util.ArrayList;
+package static_objects;
 
+import abstract_types.*;
+import java.util.ArrayList;
 
 /*
  * Class for Degradation Queue

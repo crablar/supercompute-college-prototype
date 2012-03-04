@@ -1,3 +1,4 @@
+package interfaces;
 
 /*
  * Interface for Disruptive

@@ -1,3 +1,7 @@
+package abstract_types;
+
+import interfaces.*;
+
 import java.util.ArrayList;
 
 /*
@@ -20,25 +24,37 @@ public class Amalgam extends Instance implements Disruptive, Adhesive{
 	public int setAdhesion() {
 		return 0;
 	}
-	
-	public int becomeDisrupted(){
-		return 0;
-	}
 
-	@Override
 	public int becomeDisrupted(int amtDisruption) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
 	public void disrupt(Adhesive target, int amtDisruption) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	public void addExtension()
+	public void addExtension(){
 	
-	
+	}
+
+	@Override
+	public void beDisrupted(Adhesive target, int amtDisruption) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void disrupt(Adhesive target) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getDisruption() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

@@ -1,82 +1,68 @@
-Supercompute
+Supercompute Rules
 
-Objective: Reduce your opponent's fault tolerance to 0.
+Objective: Reduce your opponent's fault tolerance to 0%.
 
 Fault Tolerance
-A player starts with a fault tolerance of 100.  Certain events throughout the game have a higher probability of adversely affecting a player with a low fault-tolerance, so losing fault tolerance can cause a negative feedback loop.
-//challenge will be to make the negative momentum for the less fault tolerant player surmountable
+A player starts with a fault tolerance of 100%.  A player with a lower fault tolerance is more likely to have unpredictable events happen throughout the game.
 
 Functions
-Players begin with three random concealed functions in their function bag, which are taken from their function library.  Players may use any number of functions per turn as long as they provide the proper parameters.  When a function has finished, it moves to the back of its owner's degradation queue.  Once a turn, any parametric action of your choice can be queued for degradation(put in the back of the degradation unit) in exchange for instantiating a generic foundational unit of any type of specific basic resource that function takes as a parameter.
-Functions: use parameters such as CPU power, genome
-Constructions: initializes some data instance that has an adhesion number
+Players begin with three random concealed functions in their function bag, which are taken from their function library.  Players may use any number of functions per turn as long as they provide the proper parameters.  When a function has finished, it moves to the back of its owner's degradation queue.  Once a turn, any function in your function bag can be queued for degradation (put in the back of the degradation queue) in exchange for instantiating a generic foundational unit of any type of specific basic resource that function takes as a parameter.
 
-Instance Attributes
-Adhesion: if an amalgam is disrupted for x, its top level extension loses x adhesion; if an extension has no adhesion, it falls off and moves to the back of the player's degradation queue; at the end of the turn, an extension's adhesion is refreshed.
-Disruptive Capacity:   Disruptive capacity is a number representing how much an instance can disrupt a target during a routine disruption.  Unless stated otherwise, an instance can only use its disruptive capacity during one of the two routine disruption phases of its controller's turn.  If an object is disrupted for x, its top-level extension loses x adhesion; if an extension has no remaining adhesion, it falls off whatever instance it was built upon.   By default, objects can be disrupted only at top-level.  Also by default, if an instance disrupts a target for x, and the target instance's adhesion is less than x, the extraneous disruption has no effect.  However, if the disruptive instance has disruption cascade, the extraneous disruption disrupts the highest-level extension beneath the initial target of the disruption. If you have an instance with remaining disruptive capacity at the end of a Routine Disruption and there are no legal adhering targets, you may decrement a player's fault tolerance by that much.
-Nullness: A null instance will not have value extracted from it, cannot be disrupted by routine disruption unless it is the root instance(see "Disruptive Capacity" above) and cannot have any actions used; all abstractions on a higher level than it are also rendered null
-Productivity: a productive instance is extracted by default during preparation.
+An example Function:
+
+Subtraction--bb
+Disrupt an amalgam or a player for 10.
+
+Constructions
+A Construction is a function type that instantiates and initializes an instance of some extension or standalone entity.
+
+An example Construction:
+
+Lactiferous Antennae--ee
+4/10
+s: Opponent plays with a random function from his function bag exposed.
+v: When Lactiferous Antennae is initialized, your opponent exposes a random function from his function bag.  It remains exposed until it leaves his function bag.  If that function leaves his function bag, your opponent exposes a different function from his function bag at random.
+Extraction: e
+
+The text following "s:" provides a brief explanation of what the instantiation does.  The text following "v:" provides a verbose explanation.
 
 Instances
-Anything instantiated by a construction action is an instance.  Any abstraction and any semaphore is an instance. Any actions that are defined as instantiated are instances.  Null instances still count as instantiated.
+Anything instantiated by a construction action is an instance.  Any semaphore is an instance.
 
-Foundational Units
--genetic: extracts for g
--byte
-//need generic semaphores for generic extensions
+Instance Attributes
+Adhesion: When an instance has adhesion of a number less than one, it is destroyed and moves to the back of its controller's degradation queue.  If a standalone entity is disrupted for x, it loses x adhesion.  If an amalgam is disrupted for x, the player that controls that amalgam distributes x across any number of extensions. Each of those extensions loses an amount of adhesion ranging from x to 1 with losses summing to x.  In the example Construction above, an initialized Lactiferous Antennae begins with 10 adhesion.
+Disruption: For an extension, disruption refers to the amount of disruption that extension contributes to its amalgam's overall disruption.  For an amalgam, disruption is a number representing how much an amalgam can disrupt a target during routine disruption.  In the example above, Lactiferous Antennae has disruption of 4.  If your opponent does not control any instances with adhesion of one or greater, you may disrupt your opponent directly.
+Extraction: During the extraction phase, each instance with extraction increments the semaphores (resource controllers/distributors) of its controller by an amount corresponding to that instance's extraction details.  In the example above, Lactiferous Antennae gets extracted for an evo during each extraction phase, so its controller's evolute semaphore gets incremented by 1; if Lactiferous Antennae's extraction were instead ee, the evolute semaphore would be incremented by 2.
 
-Semaphore: A resource counter.  For the sake of simplicity, there are currently only two types of semaphores, both basic: CPU power and genome.  Both are associated with the generic instances "evolute" and "byte".  Semaphores don't lose their resources at end of turn and can accumulate an unlimited amount unless otherwise specified.
-//may have to limit the amount they can accumulate to encourage action
+Foundational Unit
+A foundational unit is an instance without adhesion that extensions are built off of.  You can instantiate a foundational unit once a turn by degrading a function in your function bag.
+
+Semaphore
+A resource counter.  There are three types: evolute, bitwise, and generic.  During the extraction phase, all your instances with extraction add resources to the semaphores that their extraction amounts correspond to.   Semaphores don't lose their resources at end of turn and can accumulate an unlimited amount of resource in them unless otherwise specified.
+
+Faulting
+For each decisive action a player makes, there is a set of faults that can occur based on the action he is taking.  Whether or not he faults during a given action is determined semi-randomly, with a lower fault tolerance being associated with a higher fault rate.  IE, a fault tolerance of 90% corresponds to a fault rate of 10%.
 
 Before the game begins, players declare a concealed number and reveal it at the same time.  The player who reveals the higher number loses that much fault tolerance and takes the first turn.  If there is a tie, repeat this process.  If there is another tie after that, decide who goes first randomly.
 
 Taking a turn:
 
-//during each defined phase, all instances are checked for "phase actions"
-
 Preparation
--add a random parametric action from your actions library to your action bag
+-add a random function from your function library to your function bag
 
 Extraction
--extract value from all your productive instances; they yield x semaphoric value where x is the lowest-cost action on each of their top-level abstractions that .  Increment by a total of x any number of semaphores that provide resources that the extracted instance's parameters could take.
-//Unlike Magic, actions can take place during this phase
+-extract value from all your extractable instances
 
 Evaluation
--active player can use construction
--use functions for whatever their parameters
--use actions of objects
+-active player can use functions
 
 Routine Disruption
--use functions for whatever their parameters unless they say that they can't be used during routine disruption
--use actions of objects unless they say that they can't be used during routine disruption
--objects can disrupt for their disruption capacity
--at the end of routine disruption, extensions with no adhesion and all of their higher level classifications are put in the degradation unit
+-active player can use any of his amalgams to disrupt any other amalgam; each amalgam active player controls can only disrupt once
+-if inactive player does not have any instances with adhesion greater than 0, you may disrupt that player directly
 
-Evaluation and Routine Disruption
--use functions for whatever their parameters unless they can't be used during routine disruption
--use actions on objects
--objects can use disruption actions
--active player can use construction
--players can use actions of objects
--at the end of routine disruption, extensions with no adhesion and all of their higher level classifications are put in the degradation unit
+Evaluation
+-active player can use functions
 
 Finalization
 -environment modifications that say "ends upon turn finalization" end
 -the front item in the degradation queue gets degraded
-
-****Object Descriptions******
-
-name:		evolute
-base type:	generic
-attributes:	
-details:	You have a semaphore for genome.
-
-name:		byte
-base type:	generic
-attributes:	
-details:	You have a semaphore for cpu.
-
-name:		
-base type:	
-attributes:	
-details:	

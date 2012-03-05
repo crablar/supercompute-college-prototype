@@ -34,7 +34,7 @@ public final class DegradationQueue {
 		System.out.println(dq.toString());
 	}
 	
-	public String toString(){
+	public static String getString(){
 		return dq.toString();
 	}
 
@@ -46,7 +46,10 @@ public final class DegradationQueue {
 		return dq.size() == 0;
 	}
 
-	
+	public static void degradeAll(){
+		while(!empty())
+			degradeFront();
+	}
 	
 	
 }

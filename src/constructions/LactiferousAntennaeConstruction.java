@@ -1,4 +1,6 @@
-package constructions;
+package Constructions;
+
+import abstract_types.*;
 
 
 /*
@@ -6,10 +8,11 @@ package constructions;
  * 
  * Lactiferous Antennae--ee
  * 1/4
- * When Lactiferous Antennae is instantiated, your opponent exposes a random function from his function bag.  
+ * s: Opponent plays with a random function from his function bag exposed.
+ * v: When Lactiferous Antennae is instantiated, your opponent exposes a random function from his function bag.  
  * It remains exposed until it leaves his function bag.  If that function leaves his function bag, your opponent
  * exposes a different function from his function bag at random.
- * Extraction: ggg
+ * Extraction: gg
  * 
  * Creative outline:
  * 

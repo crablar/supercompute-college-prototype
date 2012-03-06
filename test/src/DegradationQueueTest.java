@@ -27,7 +27,7 @@ public class DegradationQueueTest {
 	public void testToString() {
 		Function f = new Function();
 		DegradationQueue.enqueue(f);
-		assertEquals("f", DegradationQueue.getString());
+		assertEquals("{ f }", DegradationQueue.getString());
 	}
 	
 	@Test
@@ -38,7 +38,7 @@ public class DegradationQueueTest {
 	@Test
 	public void testDegradeFrontSimple() {
 		assertEquals(true, DegradationQueue.empty());
-		Function f = new Function("f");
+		Function f = new Function();
 		DegradationQueue.enqueue(f);
 		assertEquals(DegradationQueue.size(), 1);
 		DegradationQueue.degradeFront();

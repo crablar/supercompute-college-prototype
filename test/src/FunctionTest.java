@@ -12,14 +12,14 @@ public class FunctionTest {
 
 	@Test
 	public void testNew(){
-		Function f = new Function("f");
+		Function f = new Function();
 		assertEquals(true, f != null);
 	}
 	
 	@Test
-	public void testGetName(){
-		Function f = new Function("f");
-		assertEquals("f", f.getName());
+	public void testGetSimpleDesc(){
+		Function f = new Function();
+		assertEquals("A blank function.", f.getSimpleDescription());
 	}
 	
 	@Test

@@ -19,7 +19,11 @@ public class SupercomputeObject {
 		return simpleDescription;
 	}
 
-	public String toStringVerbose(){
+	public String getSimpleDescription(){
+		return simpleDescription;
+	}
+	
+	public String getVerboseDescription(){
 		return verboseDescription;
 	}
 	

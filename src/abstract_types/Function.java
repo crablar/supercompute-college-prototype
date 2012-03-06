@@ -9,7 +9,7 @@ public class Function extends SupercomputeObject{
 	private boolean isExecuting;
 
 	public Function() {
-		super();
+		simpleDescription = "A blank function.";
 	}
 
 	

@@ -1,6 +1,7 @@
-package constructions;
+package constructed_instances;
 
 import abstract_types.*;
+
 
 
 /*
@@ -21,13 +22,6 @@ import abstract_types.*;
  * They lactate significantly, making them valued primarily as a resource piece.
  */
 
-public class LactiferousAntennaeConstruction extends Construction {
-	
-	/*
-	 * Initializes a construction for a Lactiferous Antennae
-	 */
-	public LactiferousAntennaeConstruction(){
-		super();
-	}
-	
+public class LactiferousAntennae extends Extension {
+
 }

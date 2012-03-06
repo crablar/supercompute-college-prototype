@@ -1,5 +1,5 @@
 package abstract_types;
 
-public class FoundationalUnit {
+public class FoundationalUnit extends Instance{
 
 }

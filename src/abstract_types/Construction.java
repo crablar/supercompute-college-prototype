@@ -1,5 +1,17 @@
 package abstract_types;
 
-public abstract class Construction {
+/*
+ * Class for Construction
+ * 
+ */
+
+public abstract class Construction extends Function{
+	
+	public Construction() {
+		super();
+	}
+
+	//null in the case of a construction that does not initialize an extension
+	private Amalgam extensionTarget;
 
 }

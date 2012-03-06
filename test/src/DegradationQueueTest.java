@@ -1,6 +1,7 @@
 package src;
 
 import static org.junit.Assert.*;
+
 import
 
 org.junit.Test;
@@ -12,17 +13,19 @@ public class DegradationQueueTest {
 
 	@Test
 	public void testDegradeAll(){
-		Function f = new Function("f");
-		DegradationQueue.enqueue(f);
-		DegradationQueue.enqueue(f);
-		DegradationQueue.enqueue(f);
+		Function f1 = new Function();
+		Function f2 = new Function();
+		Function f3 = new Function();
+		DegradationQueue.enqueue(f1);
+		DegradationQueue.enqueue(f2);
+		DegradationQueue.enqueue(f3);
 		DegradationQueue.degradeAll();
 		assertEquals(true, DegradationQueue.empty());
 	}
 	
 	@Test
 	public void testToString() {
-		Function f = new Function("f");
+		Function f = new Function();
 		DegradationQueue.enqueue(f);
 		assertEquals("f", DegradationQueue.getString());
 	}
@@ -42,24 +45,39 @@ public class DegradationQueueTest {
 		assertEquals(true, DegradationQueue.empty());
 	}
 	
-	public void testSize(){}
+	@Test
+	public void testSize(){
+		assertEquals(false, true);
+	}
 	
-	public void testDegradeFrontEmpty(){}
+	@Test
+	public void testDegradeFrontEmpty(){
+		assertEquals(false, true);
+	}
 	
-	public void testDegradeFrontEmptyTwice(){}
+	@Test
+	public void testDegradeFrontEmptyTwice(){
+		assertEquals(false, true);
+	}
 		
-	public void testEnqueueEmpty(){}
+	@Test
+	public void testEnqueueEmpty(){
+		assertEquals(false, true);
+	}
 
-	public void testEnqueueOneItem(){}
+	@Test
+	public void testEnqueueOneItem(){
+		assertEquals(false, true);
+	}
 	
-	public void testEnqueueTwoItems(){}
+	@Test
+	public void testEnqueueTwoItems(){
+		assertEquals(false, true);
+	}
 	
-	public void testEnqueueTenItems(){}
-	
-	
+	@Test
+	public void testEnqueueTenItems(){
+		assertEquals(false, true);
+	}
 
-	
-
-	
-	
 }

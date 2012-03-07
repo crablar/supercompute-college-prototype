@@ -25,12 +25,10 @@ public class Player {
 		semaphores.add(new Semaphore('g'));
 		semaphores.add(new Semaphore('b'));
 		semaphores.add(new Semaphore('e'));
-
-
 	}
 	
 	public String listFunctionBag(){
-		return null;	
+		return functionBag.toString();	
 	}
 	
 }

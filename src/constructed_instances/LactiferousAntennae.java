@@ -22,6 +22,6 @@ import abstract_types.*;
  * They lactate significantly, making them valued primarily as a resource piece.
  */
 
-public class LactiferousAntennae extends Extension {
+public class LactiferousAntennae extends Extension{
 
 }

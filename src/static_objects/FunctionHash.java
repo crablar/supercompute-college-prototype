@@ -3,6 +3,7 @@ package static_objects;
 import java.util.HashMap;
 
 import constructions.*;
+import functions.*;
 import abstract_types.Function;
 
 /*
@@ -12,6 +13,9 @@ import abstract_types.Function;
  */
 
 public final class FunctionHash {
+	
+	//This must be updated every time I add a function to fill map.
+	private final int NUM_FUNCTIONS_IN_MAP = 2;	
 	private static HashMap<String, Function> map;
 	
 	public static Function getFunction(String name){
@@ -21,5 +25,7 @@ public final class FunctionHash {
 	//must be a better way
 	public static void fillMap(){
 		map.put("Lactiferous Antennae", new LactiferousAntennaeConstruction());
+		map.put("Subtraction", new Subtraction());
+		//remember to update NUM_FUNCTIONS_IN_MAP
 	}
 }

@@ -16,7 +16,7 @@ public final class FunctionHash {
 	
 	//This must be updated every time I add a function to fill map.
 	private final int NUM_FUNCTIONS_IN_MAP = 2;	
-	private static HashMap<String, Function> map;
+	private static final HashMap<String, Function> map = new HashMap<String, Function>();
 	
 	public static Function getFunction(String name){
 		return map.get(name);

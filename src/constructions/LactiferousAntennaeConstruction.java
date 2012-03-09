@@ -22,14 +22,20 @@ import abstract_types.*;
  */
 
 public class LactiferousAntennaeConstruction extends Construction {
-	String simpleDescription = "Lactiferous Antennae--ee\n1/4\nExtraction: gg\nOpponent plays with a random function from his function bag exposed.";
-	String verboseDescription = "Lactiferous Antennae--ee\n1/4\nExtraction: gg\n When Lactiferous Antennae is instantiated, your opponent exposes a random function from his function bag. It remains exposed until it leaves his function bag.  If that function leaves his function bag, your opponent exposes a different function from his function bag at random."; 
-
+	
+	
+	// -------------------------------
+    // LactiferousAntennaeConstruction
+    // -------------------------------
+	
 	/*
 	 * Initializes a construction for a Lactiferous Antennae
 	 */
 	public LactiferousAntennaeConstruction(){
-		super();
+		name = "LactiferousAntennaeConstruction";
+		simpleDescription = "Lactiferous Antennae--ee\n1/4\nExtraction: gg\nOpponent plays with a random function from his function bag exposed.";
+		verboseDescription = "Lactiferous Antennae--ee\n1/4\nExtraction: gg\n When Lactiferous Antennae is instantiated, your opponent exposes a random function from his function bag. It remains exposed until it leaves his function bag.  If that function leaves his function bag, your opponent exposes a different function from his function bag at random."; 
+		
 	}
 	
 }

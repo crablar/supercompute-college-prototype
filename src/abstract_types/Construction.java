@@ -7,11 +7,15 @@ package abstract_types;
 
 public abstract class Construction extends Function{
 	
-	public Construction() {
-		super();
-	}
-
 	//null in the case of a construction that does not initialize an extension
 	private Amalgam extensionTarget;
+	
+	public Construction() {
+		simpleDescription = "A blank construction.";
+		name = "A blank construction.";
+		verboseDescription = "A blank construction.";
+	}
+
+
 
 }

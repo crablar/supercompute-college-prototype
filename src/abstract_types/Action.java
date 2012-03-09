@@ -4,6 +4,7 @@ package abstract_types;
 
 public abstract class Action extends Function {
 
+	
 	public Action() {
 		super();
 	}

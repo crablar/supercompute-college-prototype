@@ -15,12 +15,20 @@ import abstract_types.Function;
  * 
  */
 public class Subtraction extends Function{
+
 	
-	private String simpleDescription = "Disrupt target amalgam or player for 10.";
-	private String verboseDescription = "Disrupt target amalgam or player for 10.";
-
+	// -----------
+    // Subtraction
+    // -----------
+	
+	/*
+	 * Initializes a Subtraction function.
+	 */
+	
 	public Subtraction(){
-		super();
+		name = "Subtraction";
+		simpleDescription = "Disrupt target amalgam or player for 10.";
+		verboseDescription = "Disrupt target amalgam or player for 10.";
+		isExecuting = false;
 	}
-
 }

@@ -16,7 +16,7 @@ public class SupercomputeObject {
 	}
 	
 	public String toString(){
-		return simpleDescription;
+		return name;
 	}
 
 	public String getSimpleDescription(){

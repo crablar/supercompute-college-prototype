@@ -36,11 +36,13 @@ public final class FunctionLibrary {
 		String line = s.nextLine();
 		while(line != ""){
 			int numFunc = (int)line.charAt(0);
-			String funcName = line.substring(2);
+			String funcName = line.substring(2).replace(" ", "");
 			Function f = FunctionHash.getFunction(funcName);
 			for(; numFunc > 0; numFunc--){
-				if(f != null)
+				if(f != null){
+					System.out.println(f);
 					library.add(f);
+				}
 				else
 					throw new RuntimeException("Library List contains invalid functions!");
 			}

@@ -31,4 +31,8 @@ public class Player {
 		return functionBag.toString();	
 	}
 	
+	public FunctionLibrary getFunctionLibrary(){
+		return functionLibrary;
+	}
+	
 }

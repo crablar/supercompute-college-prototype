@@ -1,0 +1,14 @@
+# test suites and the classes they test
+---------------------------------------
+
+- suite_abstract_types
+    Function
+    Semaphore
+    
+- suite_constructions	#tests unique constructions
+	LactiferousAntennaeConstruction
+	
+- suite_static_objects
+	DegradationQueue
+	FunctionHash
+	FunctionLibrary

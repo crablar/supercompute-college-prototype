@@ -1,10 +1,10 @@
 package static_objects;
 
+/*
+ * A high-level representation of a game state.
+ */
+
 public class Game {
-	
-	/*
-	 * A high-level representation of a game state.
-	 */
 	
 	private Player player1;
 	private Player player2;

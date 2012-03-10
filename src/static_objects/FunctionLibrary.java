@@ -29,22 +29,29 @@ public final class FunctionLibrary {
 	private ArrayList<Function> library;
 	
 	public void createLibrary(File libList) throws FileNotFoundException{
+		library = new ArrayList<Function>();
 		libraryList = libList;
 		Scanner s = new Scanner(libList);
 		listName = s.nextLine();
 		s.nextLine();
 		String line = s.nextLine();
-		while(line != ""){
-			int numFunc = (int)line.charAt(0);
-			String funcName = line.substring(2).replace(" ", "");
+		boolean endOfList = false;
+		while(!endOfList){
+			Scanner lineParser = new Scanner(line);
+			int numFunc = lineParser.nextInt();
+			String funcName = line.substring(2);
 			Function f = FunctionHash.getFunction(funcName);
 			for(; numFunc > 0; numFunc--){
 				if(f != null){
-					System.out.println(f);
+					System.out.println(numFunc);
 					library.add(f);
 				}
 				else
 					throw new RuntimeException("Library List contains invalid functions!");
+			if(s.hasNextLine())
+				line = s.nextLine();
+			else
+				endOfList = true;
 			}
 		}
 	}

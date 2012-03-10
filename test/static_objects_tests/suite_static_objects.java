@@ -5,13 +5,10 @@ import junit.framework.TestSuite;
 
 public class suite_static_objects {
 
-	private final static Class[] static_object_tests = {
-		DegradationQueueTest.class, 
-		FunctionHashTest.class, 
-		FunctionLibraryTest.class
-	};
+
 	
 	public static Test suite() {
+		Class[] static_object_tests = {DegradationQueueTest.class, FunctionHashTest.class, FunctionLibraryTest.class};
 		TestSuite suite = new TestSuite(static_object_tests);
 		//$JUnit-BEGIN$
 

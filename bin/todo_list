@@ -1,3 +1,8 @@
 To-do list
+
+-potential variants:
+	Drafting:  Draft functions before the start of the match
+	Dummy Fighting:  This seems like a very cool way to begin without much interactivity.  You know the contents and order of your function library and you simply have to reduce a dummy's Fault Tolerance to 0.
+
 -move "interfaces" to "instance attributes"
 	Could potentially have other types of interfaces.

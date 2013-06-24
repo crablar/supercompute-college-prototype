@@ -27,6 +27,7 @@ public class Semaphore extends Instance{
 	public int decrement(){
 		if(amount == 0)
 			throw new RuntimeException("Semaphore underflow!");
+		//else?
 		return --amount;
 	}
 	
